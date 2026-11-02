@@ -1,642 +1,637 @@
-📱 Phone OSINT Tool
-Promo Tool Created by VEER 🛡️
+📱 Phone OSINT Tool — Professional Edition
+🛡️ Promo Tool Created by VEER
 
-A professional, interactive Python-based Phone Number OSINT tool that performs real-time lookups via a public OSINT API and displays beautifully formatted results with automatic export to JSON, CSV, and TXT.
+A professional, interactive Python-based Phone Number OSINT utility featuring API-based lookups, formatted terminal results, batch processing, automatic JSON/CSV/TXT exports, and optional Python source-code obfuscation.
 
-https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white
-https://img.shields.io/badge/License-MIT-green
-https://img.shields.io/badge/Status-Active-brightgreen
-https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey
-https://img.shields.io/badge/Author-VEER-purple
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+<img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
+<img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform">
+<img src="https://img.shields.io/badge/Author-VEER-purple" alt="Author">
+</p>
 
 📖 Table of Contents
 About
-
 Features
-
 Screenshots
-
 Installation
-
 Usage
-
 Output & Exports
-
 How It Works
-
 Project Structure
-
+Python Script Protection
+Why Obfuscate Python?
+Obfuscation Methods
+PyArmor Installation
+Obfuscating Your Script
+Building a Windows EXE
+Linux & macOS
+Nuitka Alternative
+Security Best Practices
 Roadmap
-
 Disclaimer
-
 Legal Notice
-
 License
-
 Author
-
 🧭 About
-Phone OSINT Tool is a lightweight yet powerful CLI utility built for Open-Source Intelligence (OSINT) researchers, cybersecurity students, and ethical hackers. Given a valid 10-digit Indian mobile number, it queries a public OSINT API and returns structured information such as:
 
-👤 Owner name
+Phone OSINT Tool is a lightweight command-line application designed for authorized OSINT research, cybersecurity education, and legitimate security investigations.
 
-👨 Father's name
+The application accepts an Indian mobile number and sends a lookup request to a configured third-party API.
 
-🏠 Full address
+Depending on the API's response, the tool can display structured information such as:
 
-☎️ Alternate contact
-
+📱 Mobile number
+👤 Name (if returned by the API)
+👨 Father's name (if returned by the API)
+🏠 Address (if returned by the API)
+☎️ Alternate contact (if returned by the API)
 📡 Telecom circle / operator
+🆔 API-provided identifier
+📧 Associated email (if returned by the API)
 
-🆔 Unique ID
+The application features an interactive terminal interface, so users don't need to remember complicated command-line arguments.
 
-📧 Linked email
-
-The tool runs interactively — no complex CLI flags needed. Just launch and type the number when prompted.
-
-⚠️ Intended for educational purposes only. See Legal Notice.
-
+⚠️ Use this application only with numbers you own or are explicitly authorized to investigate. Third-party API availability and data accuracy are not guaranteed.
 ✨ Features
 Feature	Description
-🎯 Interactive Prompt	Simple Enter mobile number prompt — no arguments needed
-✅ Smart Validation	Auto-cleans input, supports +91, 91XXXXXXXXXX, and XXXXXXXXXX formats
-🎨 Colorized Output	Beautiful terminal UI using colorama
-📊 Table Formatting	Clean fancy_grid tables via tabulate
-🔁 Batch Mode	Loop and query multiple numbers in one session
-💾 Multi-Format Export	Auto-saves results as JSON, CSV, and TXT
-🔄 Retry Logic	3 retries with backoff on network failures
-🛡️ Error Handling	Graceful handling of invalid input, timeouts, and API errors
-🏷️ Branded Exports	Every output file carries the "Promo Tool Created by VEER" watermark
-⚡ Zero Config	Works out of the box — no API keys required
+🎯 Interactive Prompt	Simple mobile number input
+✅ Smart Validation	Supports Indian mobile number formats
+🎨 Colorized Output	Terminal interface powered by Colorama
+📊 Table Formatting	Professional tables using Tabulate
+🔁 Batch Mode	Multiple lookups in one session
+💾 Multi-Format Export	JSON, CSV, and TXT
+🔄 Retry Logic	Retry handling for temporary network failures
+🛡️ Error Handling	Handles invalid input, timeouts, and API errors
+🏷️ Branded Exports	VEER branding in generated reports
+⚡ Simple Setup	No local API key configuration required when using a public API
+🔒 Source Protection Guide	Optional Python obfuscation and executable packaging
 📸 Screenshots
+
+Example terminal interface:
+
 text
 ╔══════════════════════════════════════════════════════════════╗
-║    📱  PHONE OSINT TOOL  •  Professional Edition             ║
-║    Promo Tool Created by  V E E R                            ║
+║             📱 PHONE OSINT TOOL                              ║
+║                 Professional Edition                         ║
+║             Promo Tool Created by VEER                       ║
 ╚══════════════════════════════════════════════════════════════╝
 
-  ➤ Enter mobile number (or 'q' to quit): 9999999891
+  ➤ Enter mobile number (or 'q' to quit): XXXXXXXXXX
 
-  ⏳ Searching for 9999999891 ...
+  ⏳ Searching...
 
 ══════════════════════════════════════════════════════════════
-  🔍 Results for: 9999999891
+                    🔍 LOOKUP RESULTS
 ══════════════════════════════════════════════════════════════
-╒════════════╤═══════════════════════════════════════════╕
-│ 📱 Mobile  │ 9999999891                                │
-│ 👤 Name    │ Krishan Bidhuri                           │
-│ 👨 Father  │ Dharamveer                                │
-│ 🏠 Address │ 75, Block-52, Aali, New Delhi, South...   │
-│ ☎  Alt No. │ 9999599891                                │
-│ 📡 Circle  │ AIRTEL DELHI                              │
-│ 🆔 ID      │ 417479131232                              │
-│ 📧 Email   │ Krishanbidhuri33@Gmail.Com                │
-╘════════════╧═══════════════════════════════════════════╛
-  ✔ Lookup completed successfully
+
+  📱 Mobile       : XXXXXXXXXX
+  👤 Name         : [Redacted]
+  🏠 Address      : [Redacted]
+  📡 Operator     : [API response]
+  📧 Email        : [Redacted]
+
+══════════════════════════════════════════════════════════════
+
+  ✔ Lookup completed
 
   ↻ Do another lookup? (y/N): n
 
-  📦 Saving session results ...
-  💾 Saved JSON → output/osint_20250115_142233.json
-  💾 Saved CSV  → output/osint_20250115_142233.csv
-  💾 Saved TXT  → output/osint_20250115_142233.txt
+  📦 Saving session results...
 
-  ✦ Powered by PhoneOSINT • Promo Tool by Veer ✦
+  💾 JSON → output/
+  💾 CSV  → output/
+  💾 TXT  → output/
+
+  ✦ Promo Tool Created by VEER ✦
+
 🛠️ Installation
 Prerequisites
 Python 3.8+
-
 pip package manager
-
 Internet connection
-
+Access to a compatible third-party API
 Step 1 — Clone the repository
 bash
-git clone https://github.com/your-username/phone-osint-tool.git
-cd phone-osint-tool
-Step 2 — (Optional) Create a virtual environment
+git clone https://github.com/B5970/osintgram.git
+cd osintgram
+
+Step 2 — Create a virtual environment (Recommended)
+
+Linux / macOS
+
 bash
-# Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
 
-# Windows
+
+Windows
+
+bash
 python -m venv venv
 venv\Scripts\activate
+
 Step 3 — Install dependencies
 bash
 pip install -r requirements.txt
-Or manually:
+
+
+Alternatively:
 
 bash
 pip install requests colorama tabulate
+
 🚀 Usage
-Run the tool
+Start the application
 bash
 python phone_osint.py
-Follow the prompts
+
+Interactive example
 text
-➤ Enter mobile number (or 'q' to quit): 9999999891
+➤ Enter mobile number (or 'q' to quit): XXXXXXXXXX
+
+⏳ Searching...
+
+✔ Lookup completed successfully
+
 ↻ Do another lookup? (y/N): y
-➤ Enter mobile number (or 'q' to quit): 9876543210
+
+➤ Enter mobile number (or 'q' to quit): XXXXXXXXXX
+
 ↻ Do another lookup? (y/N): n
+
 Accepted input formats
-Input	Accepted?
-9999999891	✅
-+919999999891	✅
-919999999891	✅
-99999-99891	✅ (cleaned)
-12345	❌ (invalid length)
-1234567890	❌ (must start with 6–9)
+Input	Expected behavior
+XXXXXXXXXX	10-digit Indian mobile number
++91XXXXXXXXXX	International prefix
+91XXXXXXXXXX	Country code
+XXXXX-XXXXX	Formatting characters cleaned
+Invalid length	Rejected
+Invalid starting digit	Rejected
 Exit
-Type q, quit, or exit at any prompt, or press Ctrl+C.
+
+Type any of the following:
+
+text
+q
+quit
+exit
+
+
+Or press Ctrl+C.
 
 📂 Output & Exports
-Every session automatically saves results to the output/ directory:
 
+The application automatically saves session results in the output/ directory.
+
+Generated files
 text
 output/
-├── osint_20250115_142233.json
-├── osint_20250115_142233.csv
-└── osint_20250115_142233.txt
+├── osint_YYYYMMDD_HHMMSS.json
+├── osint_YYYYMMDD_HHMMSS.csv
+└── osint_YYYYMMDD_HHMMSS.txt
+
 JSON Example
 json
 [
-    {
-        "mobile": "9999999891",
-        "name": "Krishan Bidhuri",
-        "fname": "Dharamveer",
-        "address": "!75!Block-52!!Aali New DelhiSouth Delhi!Delhi!110019",
-        "alt": "9999599891",
-        "circle": "AIRTEL DELHI",
-        "id": "417479131232",
-        "email": "Krishanbidhuri33@Gmail.Com"
-    }
+  {
+    "mobile": "XXXXXXXXXX",
+    "name": "[REDACTED]",
+    "fname": "[REDACTED]",
+    "address": "[REDACTED]",
+    "alt": "[REDACTED]",
+    "circle": "[API RESPONSE]",
+    "id": "[REDACTED]",
+    "email": "[REDACTED]"
+  }
 ]
+
 CSV Example
 csv
 mobile,name,fname,address,alt,circle,id,email
-9999999891,Krishan Bidhuri,Dharamveer,!75!Block-52!!Aali...,9999599891,AIRTEL DELHI,417479131232,Krishanbidhuri33@Gmail.Com
+XXXXXXXXXX,[REDACTED],[REDACTED],[REDACTED],[REDACTED],[API RESPONSE],[REDACTED],[REDACTED]
+
 TXT Example
 text
-📱 PHONE OSINT TOOL • Promo Tool Created by VEER
-Generated: 2025-01-15 14:22:33
+PHONE OSINT TOOL
+Promo Tool Created by VEER
 
-mobile    : 9999999891
-name      : Krishan Bidhuri
-fname     : Dharamveer
-...
+Generated: YYYY-MM-DD HH:MM:SS
+
+mobile  : XXXXXXXXXX
+name    : [REDACTED]
+fname   : [REDACTED]
+address : [REDACTED]
+circle  : [API RESPONSE]
+
+🔐 Keep exported reports private. They may contain personal information.
 ⚙️ How It Works
-text
-┌─────────────────┐
-│  User Input     │
-│  (mobile no.)   │
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│  Validation     │  ← strips +91, non-digits
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│  GET API Call   │  → https://...hf.space/search?mobile=...
-│  (with retries) │
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│  JSON Parsing   │  ← handles success / error responses
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│  Pretty Print   │  ← colorized table
-└────────┬────────┘
-         ▼
-┌─────────────────┐
-│  Export to      │
-│  JSON/CSV/TXT   │
-└─────────────────┘
-API Endpoint Used:
+
+The application's general workflow:
 
 text
-GET https://tfqdeadlo-1-78bapi.hf.space/search?mobile=<number>
-Sample Response:
+       ┌──────────────────┐
+       │    User Input    │
+       │  Mobile Number   │
+       └────────┬─────────┘
+                │
+                ▼
+       ┌──────────────────┐
+       │    Validation    │
+       │  Input Cleaning  │
+       └────────┬─────────┘
+                │
+                ▼
+       ┌──────────────────┐
+       │   API Request    │
+       │  HTTP GET Call   │
+       └────────┬─────────┘
+                │
+                ▼
+       ┌──────────────────┐
+       │   JSON Parsing   │
+       │ Response Handling│
+       └────────┬─────────┘
+                │
+                ▼
+       ┌──────────────────┐
+       │  Pretty Output   │
+       │ Colorized Tables │
+       └────────┬─────────┘
+                │
+                ▼
+       ┌──────────────────┐
+       │  Export Results  │
+       │ JSON / CSV / TXT │
+       └──────────────────┘
 
-json
-{
-  "status": "success",
-  "data": {
-    "mobile": "9999999891",
-    "name": "Krishan Bidhuri",
-    "fname": "Dharamveer",
-    "address": "!75!Block-52!!Aali New DelhiSouth Delhi!Delhi!110019",
-    "alt": "9999599891",
-    "circle": "AIRTEL DELHI",
-    "id": "417479131232",
-    "email": "Krishanbidhuri33@Gmail.Com"
-  }
-}
+API Configuration
+
+The application uses a third-party API endpoint.
+
+Example format:
+
+text
+GET https://your-api-host.example/search?mobile=<number>
+
+
+The actual endpoint should be configured in the Python application.
+
+Important: A public API can change, become unavailable, impose rate limits, or return inaccurate information. Verify that you are authorized to use the service and that its terms permit your intended use.
+
 📁 Project Structure
 text
 phone-osint-tool/
-├── phone_osint.py          # Main tool script
-├── requirements.txt        # Python dependencies
-├── README.md               # This file
-├── LICENSE                 # MIT License
-└── output/                 # Auto-generated exports
-    ├── osint_*.json
-    ├── osint_*.csv
-    └── osint_*.txt
+│
+├── phone_osint.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+│
+├── output/
+│   ├── osint_*.json
+│   ├── osint_*.csv
+│   └── osint_*.txt
+│
+└── protected/
+    └── obfuscated application files
+
 requirements.txt
-txt
+text
 requests>=2.31.0
 colorama>=0.4.6
 tabulate>=0.9.0
-🗺️ Roadmap
-☑ Interactive prompt-based input
-☑ Multi-format export (JSON / CSV / TXT)
-☑ Retry logic + error handling
-☑ Session-based batch lookup
-□ 🔜 Proxy support
-□ 🔜 Rate-limit detection
-□ 🔜 Web UI (Flask / FastAPI)
-□ 🔜 Bulk import from .txt file
-□ 🔜 HTML report generation
-□ 🔜 Docker containerization
-⚠️ Disclaimer
-This tool is provided "as is", without warranty of any kind, express or implied. The author assumes no responsibility or liability for:
 
-Any misuse of the tool
+🔒 Python Script Protection
 
-Any damage caused by improper use
+Want to distribute your Python application without exposing its original source code?
 
-Any violation of laws resulting from its usage
+This section explains optional source-code obfuscation and executable packaging.
 
-The accuracy of the data returned by third-party APIs
+🤔 Why Obfuscate Python?
 
-You are solely responsible for how you use this tool.
-
-⚖️ Legal Notice
-⚠️ IMPORTANT — PLEASE READ
-
-This tool is intended strictly for:
-
-🎓 Educational purposes
-
-🔬 Authorized security research
-
-🛡️ Lawful OSINT investigations
-
-✅ Numbers you own or have explicit written permission to investigate
-
-Using this tool to look up numbers without consent may violate:
-
-🇮🇳 IT Act, 2000 (India)
-
-🇮🇳 DPDP Act, 2023 (India)
-
-🇪🇺 GDPR (EU)
-
-🇺🇸 CFAA (USA)
-
-Similar privacy laws in your jurisdiction
-
-The author ("Veer") and contributors accept no legal responsibility for misuse.
-Use at your own risk. Stay ethical. 🛡️
-
-📜 License
-Distributed under the MIT License. See LICENSE for full text.
+Normally, Python scripts are readable:
 
 text
-MIT License
+phone_osint.py
 
-Copyright (c) 2025 VEER
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Anyone who receives the original source file can open it using a text editor.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+Obfuscation transforms the source code into a less readable format, making casual inspection and copying more difficult.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
-👤 Author
-VEER 🛡️
+Benefits
+🔒 Makes source code harder to read.
+🛡️ Helps protect proprietary application logic.
+📦 Supports executable distribution.
+⚙️ Offers optional licensing features.
+💻 Helps prepare applications for commercial distribution.
+⚠️ No obfuscation technique can guarantee complete protection against reverse engineering.
+📊 Obfuscation Methods
+Tool	Main Purpose
+PyArmor	Python source-code obfuscation
+PyInstaller	Executable packaging
+Nuitka	Native compilation
+Cython	Compiling Python modules
+Base64	Encoding only, not security
+Recommended combination
 
-🐙 GitHub: @your-username
+PyArmor + PyInstaller
 
-📧 Email: (add your email)
+PyArmor provides code obfuscation.
+PyInstaller packages the protected application.
+Together, they make casual source inspection more difficult and simplify distribution.
+🛠️ Step 1 — Install PyArmor
 
-💬 Telegram: (add your handle)
+Install the required packages:
 
-"Promo Tool Created by VEER — Built with ❤️ for the OSINT community."
-
-⭐ Support the Project
-If this tool helped you, please star ⭐ the repository — it motivates continued development!
-
-bash
-# Quick start
-git clone https://github.com/your-username/phone-osint-tool.git
-cd phone-osint-tool
-pip install -r requirements.txt
-python phone_osint.py
-<div align="center">
-🛡️ Promo Tool Created by VEER 🛡️
-
-Made with ❤️ using Python
-
-</div>
-Okay thanks buddy how can I make this script obfuscation so nobody can directly read the script 
-🔒 Python Script Obfuscation — Complete Guide
-Promo Tool Created by VEER 🛡️
-
-⚠️ Reality check first: Python is an interpreted language — no obfuscation is 100% unbreakable. A determined attacker with enough time can always reverse-engineer Python bytecode. However, obfuscation raises the bar significantly and stops 95%+ of casual snoopers. This guide covers practical, layered protection.
-
-📊 Obfuscation Levels (Choose Your Weapon)
-Level	Method	Difficulty to Break	Pros	Cons
-🟢 1	Simple encoding (base64)	⭐ Trivial	Fast	Useless for real protection
-🟡 2	PyArmor (recommended)	⭐⭐⭐⭐ Hard	Cross-platform, active	Paid for advanced features
-🟡 3	Nuitka (compile to C)	⭐⭐⭐⭐⭐ Very Hard	Native binary, fast	Slow build, large binary
-🟠 4	PyInstaller + PyArmor	⭐⭐⭐⭐⭐ Very Hard	Single exe + obfuscation	AV may flag
-🔴 5	Cython (compile to .so)	⭐⭐⭐⭐⭐ Very Hard	Near-native speed	Complex setup
-🔴 6	SourceDefender / Themida	⭐⭐⭐⭐⭐⭐ Extreme	Commercial-grade	💰 Paid
-🏆 Recommended Approach: PyArmor + PyInstaller
-This gives you a single .exe (or Linux binary) with:
-
-✅ Encrypted source
-
-✅ Runtime license checks
-
-✅ No readable .py files
-
-✅ No extractable bytecode (hardened)
-
-🔧 STEP-BY-STEP: PyArmor + PyInstaller
-Step 1 — Install tools
 bash
 pip install pyarmor pyinstaller
+
+
 Verify:
 
 bash
 pyarmor --version
 pyinstaller --version
-Step 2 — Organize project
+
+
+Official documentation:
+
+PyArmor: https://pyarmor.readthedocs.io/
+PyInstaller: https://pyinstaller.org/
+🔐 Step 2 — Obfuscate Your Script
+
+Make sure your project contains:
+
 text
 phone-osint-tool/
-├── phone_osint.py          # your main script
-├── requirements.txt
-└── build/                  # auto-generated
-Step 3 — Obfuscate with PyArmor
+├── phone_osint.py
+└── requirements.txt
+
+
+Run:
+
 bash
-# Obfuscate into a dist folder
-pyarmor gen -O obf_dist -r phone_osint.py
-What you get:
+pyarmor gen -O obfuscated phone_osint.py
+
+
+The generated directory contains the protected script and its required runtime files.
+
+Example:
 
 text
-obf_dist/
-├── phone_osint.py          # ← encrypted, unreadable
-└── pyarmor_runtime_000000/
-    ├── __init__.py
-    └── pyarmor_runtime.pyd   (or .so on Linux)
-If you open obf_dist/phone_osint.py, you'll see something like:
+obfuscated/
+├── phone_osint.py
+└── pyarmor_runtime_*/
 
-python
-# Pyarmor 9.x.x (trial), ... 
-from pyarmor_runtime_000000 import __pyarmor__
-__pyarmor__(__name__, __file__, b'PYARMOR\x00\x00\x03...')
-Totally unreadable. ✅
 
-Step 4 — (Optional) Add license expiration
-bash
-pyarmor gen --expired "2026-12-31" -O obf_dist phone_osint.py
-Now the script won't run after the expiry date — perfect for distributing trials.
-
-Other useful flags:
-
-Flag	Purpose
---bind-device	Locks to specific machine hardware
---bind-mac MAC	Locks to MAC address
---period 30	Runtime limit (30 days)
---enable-rft	Renames function names
---enable-jit	JIT compilation at runtime
-Example — maximum protection:
+Test the generated script:
 
 bash
-pyarmor gen --enable-rft --enable-jit --expired "2026-12-31" -O obf_dist phone_osint.py
-Step 5 — Test the obfuscated script
-bash
-cd obf_dist
-python phone_osint.py
-It should run exactly the same — but the source is now unreadable. ✅
+python obfuscated/phone_osint.py
 
-Step 6 — Package into a single .exe
-Now bundle everything into a single executable (no Python needed on target):
 
-bash
-pyinstaller --onefile ^
-    --name "PhoneOSINT" ^
-    --icon=icon.ico ^
-    --hidden-import=pyarmor_runtime_000000 ^
-    --add-data "obf_dist;obf_dist" ^
-    obf_dist\phone_osint.py
-For Linux / macOS (replace ^ with \):
+Make sure the application works before packaging it.
+
+📦 Step 3 — Build a Windows Executable
+
+Install PyInstaller if you haven't already:
 
 bash
-pyinstaller --onefile \
-    --name "PhoneOSINT" \
-    --hidden-import=pyarmor_runtime_000000 \
-    --add-data "obf_dist:obf_dist" \
-    obf_dist/phone_osint.py
-Result:
+pip install pyinstaller
+
+
+Navigate to the obfuscated directory:
+
+bash
+cd obfuscated
+
+
+Build:
+
+bash
+pyinstaller --onefile --console --name PhoneOSINT phone_osint.py
+
+
+Your executable will be generated inside:
 
 text
 dist/
-└── PhoneOSINT.exe    ← single file, encrypted, ready to distribute
-🥷 Alternative: Nuitka (Compile to native C)
-Nuitka converts Python → C → native binary. Much harder to reverse than PyInstaller alone.
+└── PhoneOSINT.exe
 
-Install
+
+<details>
+<summary>Windows executable build with custom icon</summary>
+
 bash
-pip install nuitka ordered-set zstandard
-Compile
+pyinstaller --onefile --console --name PhoneOSINT --icon=icon.ico phone_osint.py
+
+
+Make sure icon.ico exists in your current working directory.
+
+</details>
+
+Important
+Build and test on the target operating system.
+Include required dependencies and runtime components.
+Check that the executable can reach its configured API.
+Test on a clean machine before distribution.
+🐧 Linux & 🍎 macOS
+
+PyInstaller supports Linux and macOS as well.
+
+Build on the operating system for which you want to distribute the executable.
+
+Linux
 bash
-python -m nuitka ^
-    --standalone ^
-    --onefile ^
-    --enable-plugin=tk-inter ^
-    --windows-console-mode=force ^
-    --output-filename=PhoneOSINT.exe ^
-    --remove-output ^
-    phone_osint.py
-Pros:
+pyinstaller --onefile --console --name PhoneOSINT phone_osint.py
 
-Compiles to C → native machine code
 
-No .pyc to extract
+Run:
 
-Fast runtime
-
-Cons:
-
-Slow build (2–10 minutes)
-
-Large output (~10 MB+)
-
-Dependency issues on some systems
-
-💡 Best Combo: Nuitka + PyArmor
 bash
-# 1. Obfuscate
-pyarmor gen -O obf_dist phone_osint.py
+./dist/PhoneOSINT
 
-# 2. Compile
-python -m nuitka --onefile --standalone obf_dist/phone_osint.py
-Now you have encrypted source + native binary — the strongest free combo.
-
-🧪 Alternative: Cython (Compile to .so/.pyd)
-For maximum "invisible source", compile Python to C extensions.
-
-Setup
+macOS
 bash
-pip install cython
-Create setup.py
-python
-from setuptools import setup
-from Cython.Build import cythonize
+pyinstaller --onefile --console --name PhoneOSINT phone_osint.py
 
-setup(
-    ext_modules=cythonize(
-        "phone_osint.py",
-        compiler_directives={"language_level": "3"},
-    )
-)
+
+Run:
+
+bash
+./dist/PhoneOSINT
+
+Note: A Windows executable cannot normally be produced by running a standard PyInstaller build on Linux or macOS. Use the appropriate target build environment.
+⚡ Alternative: Nuitka
+
+Nuitka compiles Python applications into native executable code.
+
+Installation
+bash
+pip install nuitka
+
 Build
 bash
-python setup.py build_ext --inplace
-Result:
+python -m nuitka --onefile --standalone phone_osint.py
 
-text
-phone_osint.cpython-311-x86_64-linux-gnu.so    ← compiled binary
-Delete the original phone_osint.py. Now only the .so remains — you can't read it, only import it.
+Advantages
+Native compilation.
+Standalone executable support.
+No need to distribute ordinary Python source files.
+Potential performance improvements in some applications.
+Limitations
+Compilation may take longer.
+Build dependencies may be required.
+Native binaries can still be reverse-engineered.
+🛡️ Security Best Practices
 
-To distribute with PyInstaller:
+Obfuscation is not a substitute for proper application security.
 
-bash
-pyinstaller --onefile --hidden-import=phone_osint phone_osint.py
-🚫 What NOT to Do
-❌ Bad Idea	Why
-base64-encoding the script	Anyone can decode in 2 seconds
-exec(compile(...)) tricks	Trivially bypassed
-Password-protected ZIP	Password is in your code
-Renaming variables	Doesn't stop readers
-Zlib + base64	Same as base64
-These are security theater — avoid them.
+Follow these recommendations:
 
-🛡️ Extra Protection Layers
-1. Add a license system
-python
-import hashlib, platform, sys
+1. Never Hardcode API Secrets
 
-def check_license():
-    hw_id = hashlib.sha256(
-        f"{platform.node()}{platform.machine()}".encode()
-    ).hexdigest()[:16]
-
-    valid_keys = {
-        "a1b2c3d4e5f6a7b8": "2026-12-31",
-    }
-
-    key = input("Enter license key: ").strip()
-    if key not in valid_keys:
-        print("❌ Invalid license.")
-        sys.exit(1)
-2. Add anti-debugging
-python
-import sys
-
-def anti_debug():
-    if sys.gettrace() is not None:
-        print("Debugger detected. Exiting.")
-        sys.exit(1)
-3. Add integrity checks
-python
-import hashlib
-
-def verify_integrity():
-    expected = "your_expected_hash_here"
-    with open(__file__, "rb") as f:
-        actual = hashlib.sha256(f.read()).hexdigest()
-    if actual != expected:
-        print("Tampered! Exiting.")
-        sys.exit(1)
-4. Strip debug symbols
-bash
-# For Linux binaries
-strip dist/PhoneOSINT
-
-# For Windows, use `upx` to compress + strip
-upx --best dist/PhoneOSINT.exe
-📋 Quick Decision Matrix
-Your Goal	Best Option
-Just prevent casual viewing	pyarmor gen phone_osint.py
-Distribute as .exe	PyArmor + PyInstaller
-Maximum protection, no cost	Nuitka + PyArmor ⭐
-Commercial software	PyArmor Pro + Themida
-Trialware with expiry	pyarmor gen --expired "..."
-Lock to one machine	pyarmor gen --bind-device
-🎯 Full Recommended Pipeline
-bash
-# 1. Install tools
-pip install pyarmor pyinstaller nuitka
-
-# 2. Obfuscate with max protection
-pyarmor gen --enable-rft --enable-jit -O obf_dist phone_osint.py
-
-# 3. Compile to native binary with Nuitka
-python -m nuitka --onefile --standalone obf_dist/phone_osint.py
-
-# 4. Strip symbols (Linux)
-strip phone_osint.bin
-
-# 5. (Optional) Compress with UPX
-upx --best phone_osint.bin
-
-# 6. Distribute the final binary
-Result: A single encrypted native binary — source code completely inaccessible.
-
-⚠️ Important Warnings
-PyArmor trial adds a (trial) watermark to bytecode — buy the license for clean output.
-
-Antivirus false positives are common with PyInstaller/Nuitka. Sign your binary with a code-signing cert if distributing widely.
-
-Nothing is unbreakable. A skilled reverse-engineer will eventually break any Python binary — obfuscation only delays them.
-
-Never store API keys in your script if distributing it. Use a server proxy instead:
+Avoid:
 
 python
-# ❌ BAD
-API_KEY = "sk_live_abcdef123456"
+API_KEY = "your-secret-api-key"
 
-# ✅ GOOD — proxy through your own server
-response = requests.get("https://your-server.com/api/lookup", params={"mobile": n})
-Legal compliance: obfuscation doesn't override the legal notice in your README. Keep the ethical warnings visible.
 
-🏁 TL;DR — Fastest Path to Protected Script
+Use environment variables or secure server-side configuration instead.
+
+2. Protect Personal Information
+
+Avoid including real people's names, addresses, telephone numbers, or email addresses in public screenshots and repository examples.
+
+3. Use HTTPS
+
+Use secure HTTPS connections when communicating with external services.
+
+4. Keep Dependencies Updated
+
+Regularly update Python libraries and check for known security vulnerabilities.
+
+5. Protect Exported Files
+
+Generated JSON, CSV, and TXT files may contain sensitive information. Do not commit them to a public repository.
+
+Consider adding this to .gitignore:
+
+gitignore
+venv/
+__pycache__/
+*.pyc
+output/
+build/
+dist/
+*.spec
+.env
+
+6. Don't Trust Client-Side Licensing Alone
+
+If you distribute commercial software, perform important license validation on a server you control. Local validation can be modified or bypassed.
+
+🗺️ Roadmap
+Interactive prompt-based input
+Mobile number validation
+Multi-format export (JSON / CSV / TXT)
+Retry handling
+Session-based batch lookup
+Colorized terminal interface
+Python obfuscation documentation
+Executable packaging documentation
+Improved API configuration
+Better rate-limit handling
+Web interface
+Bulk import with authorization checks
+HTML report generation
+Docker support
+Automated testing
+⚠️ Disclaimer
+
+This software is provided "AS IS", without warranties of any kind, express or implied.
+
+The author makes no guarantees regarding:
+
+Third-party API availability.
+Accuracy or completeness of returned information.
+Compatibility with future API changes.
+Uninterrupted application operation.
+
+Users are responsible for ensuring that their activities comply with applicable laws, API terms, and privacy requirements.
+
+The author is not responsible for misuse of this software or any consequences resulting from unauthorized access, disclosure, or processing of personal information.
+
+⚖️ Legal Notice
+IMPORTANT — PLEASE READ BEFORE USING THIS SOFTWARE
+
+This project is intended for:
+
+🎓 Educational purposes.
+🔬 Authorized security research.
+🛡️ Lawful OSINT investigations.
+✅ Testing with your own information or information you are explicitly authorized to process.
+
+Phone numbers and associated personal information are sensitive data.
+
+Unauthorized collection, disclosure, or processing of personal information may violate applicable privacy and cybersecurity laws.
+
+Depending on jurisdiction, relevant laws may include:
+
+🇮🇳 Information Technology Act, 2000 (India).
+🇮🇳 Digital Personal Data Protection Act, 2023 (India), subject to applicable commencement and rules.
+🇪🇺 General Data Protection Regulation (GDPR).
+🇺🇸 Computer Fraud and Abuse Act (CFAA), where applicable.
+
+Always obtain appropriate authorization and follow the applicable legal requirements.
+
+📜 License
+
+This project is distributed under the MIT License.
+
+Copyright (c) 2025 VEER
+
+See the LICENSE file for complete license terms.
+
+👤 Author
+
+VEER 🛡️
+
+🐙 GitHub: @B5970
+📂 Repository: Phone OSINT Tool
+📧 Email: Add your contact email.
+💬 Telegram: Add your Telegram username.
+⭐ Support the Project
+
+If you find this project useful:
+
+⭐ Star the repository.
+🔁 Share it with other developers.
+🐛 Report bugs and documentation issues.
+💡 Suggest improvements.
+
+Your support helps improve the project!
+
+🚀 Quick Start
 bash
-# 5 commands total
-pip install pyarmor pyinstaller
-pyarmor gen --enable-rft -O obf_dist phone_osint.py
-cd obf_dist
-pyinstaller --onefile --name PhoneOSINT phone_osint.py
-# → dist/PhoneOSINT.exe
-Done. Your script is now an encrypted, unreadable, single-file executable. ✅
+git clone https://github.com/B5970/osintgram.git
+
+cd osintgram
+
+pip install -r requirements.txt
+
+python phone_osint.py
+
 
 <div align="center">
-🛡️ Promo Tool Created by VEER 🛡️
 
-Obfuscation is a shield — not a fortress. Use ethically.
+🛡️ PROMO TOOL CREATED BY VEER 🛡️
+
+Built with ❤️ using Python
+
+Protect your code. Respect privacy. Use technology responsibly.
 
 </div>
-
