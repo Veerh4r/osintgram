@@ -128,7 +128,7 @@ Example terminal interface:
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/B5970/osintgram.git
+git clone https://github.com/Veerh4r/osintgram.git
 cd osintgram
 ```
 
@@ -424,7 +424,7 @@ See the [LICENSE](LICENSE) file for complete license terms.
 
 **VEER** 🛡️
 
-- 🐙 GitHub: [@B5970](https://github.com/B5970)
+- 🐙 GitHub: [@Veerh4r](https://github.com/Veerh4r)
 - 📂 Repository: Phone OSINT Tool
 - 📧 Email: _Add your contact email_
 - 💬 Telegram: _Add your Telegram username_
@@ -447,7 +447,7 @@ Your support motivates continued development!
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/B5970/osintgram.git
+git clone https://github.com/Veerh4r/osintgram.git
 cd osintgram
 pip install -r requirements.txt
 python phone_osint.py
