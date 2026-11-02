@@ -28,7 +28,6 @@ Author
 🧭 About
 
 Phone OSINT Tool is a lightweight command-line application designed for authorized OSINT research, cybersecurity education, and legitimate security investigations.
-
 The application accepts an Indian mobile number and sends a lookup request to a configured third-party API.
 
 Depending on the API response, the tool may display:
@@ -45,8 +44,10 @@ Depending on the API response, the tool may display:
 The application features an interactive terminal interface, making it easy to use without complicated command-line arguments.
 
 ⚠️ Use this application only with numbers you own or are explicitly authorized to investigate.
+
 ✨ Features
 Feature	Description
+
 🎯 Interactive Prompt	Simple mobile number input
 ✅ Smart Validation	Supports Indian mobile number formats
 🎨 Colorized Output	Terminal interface powered by Colorama
@@ -57,6 +58,8 @@ Feature	Description
 🛡️ Error Handling	Handles invalid input, timeouts, and API errors
 🏷️ Branded Exports	VEER branding in generated reports
 ⚡ Simple Setup	Easy installation and configuration
+
+
 📸 Screenshots
 
 Example terminal interface:
@@ -102,16 +105,17 @@ Python 3.8+
 pip package manager
 Internet connection
 Access to a compatible third-party API
+
+
 Step 1 — Clone the Repository
 bash
-git clone https://github.com/B5970/osintgram.git
 
+git clone https://github.com/B5970/osintgram.git
 cd osintgram
 
 Step 2 — Create a Virtual Environment (Recommended)
 
 Linux / macOS
-
 bash
 python3 -m venv venv
 source venv/bin/activate
